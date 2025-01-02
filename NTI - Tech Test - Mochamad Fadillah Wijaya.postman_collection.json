@@ -1,0 +1,757 @@
+{
+	"info": {
+		"_postman_id": "c4cd4d4a-e06b-48ae-9153-3af63da3679d",
+		"name": "NTI - Tech Test - Mochamad Fadillah Wijaya",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28588219"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User -  Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"password\": \"123\",\r\n  \"role\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lcl}}/api/v1/User/register",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"User",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lcl}}/api/v1/User/login",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"User",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIxIiwidW5pcXVlX25hbWUiOiJKb2huIERvZSIsImVtYWlsIjoiam9obi5kb2VAZXhhbXBsZS5jb20iLCJyb2xlIjoidXNlciIsIm5iZiI6MTczNTczNjMxOCwiZXhwIjoxNzM1NzM5OTE4LCJpYXQiOjE3MzU3MzYzMTgsImlzcyI6ImFjY291bnQiLCJhdWQiOiJsb2NhbGhvc3QifQ.b2uAhFA0uqqNGBf91NSudl71lLrNqmPmJZHbtITWgOE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{lcl}}/api/v1/User/logout",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"User",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Student - Get All",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Student - Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lcl}}/api/v1/Student/detail/id/{id_student}",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Student",
+								"detail",
+								"id",
+								"{id_student}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Student - Get By Nisn",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lcl}}/api/v1/Student/detail/nisn/{nisn_student}",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Student",
+								"detail",
+								"nisn",
+								"{nisn_student}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Student - Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nisn\": \"0123456789\",\r\n    \"name\": \"John John\",\r\n    \"grade\": 12,\r\n    \"gender\": \"male\",\r\n    \"dob\": \"2000-01-01\",\r\n    \"address\": \"Indonesia\",\r\n    \"parents\": \"Doe John\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lcl}}/api/v1/Student/edit/{id_student}",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Student",
+								"edit",
+								"{id_student}"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Student - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nisn\": \"0123456789\",\r\n    \"name\": \"John John\",\r\n    \"grade\": 12,\r\n    \"gender\": \"male\",\r\n    \"dob\": \"2000-01-01\",\r\n    \"address\": \"Indonesia\",\r\n    \"parents\": \"Doe John\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lcl}}/api/v1/Student/create",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Student",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Student - Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{lcl}}/api/v1/Student/delete/{id_student}",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Student",
+								"delete",
+								"{id_student}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teacher",
+			"item": [
+				{
+					"name": "Teacher - Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lcl}}/api/v1/Teacher",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Teacher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Teacher - Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lcl}}/api/v1/Teacher/detail/{id_teacher}",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Teacher",
+								"detail",
+								"{id_teacher}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Teacher - Get By Nip",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lcl}}/api/v1/Teacher/nip/{nip_teacher}",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Teacher",
+								"nip",
+								"{nip_teacher}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Teacher - Get By Nuptk",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lcl}}/api/v1/Teacher/nuptk/{nuptk_teacher}",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Teacher",
+								"nuptk",
+								"{nuptk_teacher}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Teacher - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nip\": \"123456789987654321\",\r\n    \"nuptk\": \"0147852096308520\",\r\n    \"name\": \"Rivery Dalton\",\r\n    \"gender\": \"male\",\r\n    \"dob\": \"1995-01-01\",\r\n    \"employmentStatus\": \"pns\",\r\n    \"certification\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lcl}}/api/v1/Teacher/create",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Teacher",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Teacher - Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nip\": \"123456789987654321\",\r\n    \"nuptk\": \"0147852096308520\",\r\n    \"name\": \"Rivery Dalton\",\r\n    \"gender\": \"male\",\r\n    \"dob\": \"1995-01-01\",\r\n    \"employmentStatus\": \"pns\",\r\n    \"certification\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lcl}}/api/v1/Teacher/edit/{id_teacher}",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Teacher",
+								"edit",
+								"{id_teacher}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Teacher - Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{lcl}}/api/v1/Teacher/delete/{id_teacher}",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Teacher",
+								"delete",
+								"{id_teacher}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Class",
+			"item": [
+				{
+					"name": "Class - Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lcl}}/api/v1/Class",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Class"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Class - Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lcl}}/api/v1/Class/detail/{id_class}",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Class",
+								"detail",
+								"{id_class}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Class - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"XII - IPA 1\",\r\n    \"capacity\": 40,\r\n    \"status\": \"available\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lcl}}/api/v1/Class/create",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Class",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Class - Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"XII - IPA 1\",\r\n    \"studentIds\": [\"1\"],\r\n    \"homeroomTeacherId\": 1,\r\n    \"capacity\": 40,\r\n    \"status\": \"available\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lcl}}/api/v1/Class/edit/{id_class}",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Class",
+								"edit",
+								"{id_class}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Class - Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{lcl}}/api/v1/Class/delete/{id_class}",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Class",
+								"delete",
+								"{id_class}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subject",
+			"item": [
+				{
+					"name": "Subject - Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lcl}}/api/v1/Subject",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Subject"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subject - Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lcl}}/api/v1/Subject/detail/{id_subject}",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Subject",
+								"detail",
+								"{id_subject}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subject - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mandarin Language\",\r\n    \"type\": \"non_formal\", // non_formal or formal (not nullable)\r\n    \"category\": \"compulsory\", // compulsory or optional (not nullable)\r\n    \"studentIds\": null, // (nullable)\r\n    \"teacherIds\": null, // (nullable)\r\n    \"gradeQualification\": null// integer (set wchich grade can access/enroll the subject)\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lcl}}/api/v1/Subject/create",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Subject",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subject - Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mandarin Language\",\r\n    \"type\": \"non_formal\",\r\n    \"category\": \"compulsory\",\r\n    \"studentIds\": [\"1\"],\r\n    \"teacherIds\": [\"1\"],\r\n    \"gradeQualification\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lcl}}/api/v1/Subject/edit/{id_subject}",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Subject",
+								"edit",
+								"{id_subject}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subject - Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{lcl}}/api/v1/Subject/delete/{id_subject}",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Subject",
+								"delete",
+								"{id_subject}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Enrollment",
+			"item": [
+				{
+					"name": "Enrollment - Get List of Student's Subject",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{lcl}}/api/v1/Enrollment/student/{id_student}",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Enrollment",
+								"student",
+								"{id_student}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enrollment - Student Enrollment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[1] // Arr of Student id -> Won't be any duplicate even contain the existing student id",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lcl}}/api/v1/Enrollment/{id_subject}/enroll-students",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Enrollment",
+								"{id_subject}",
+								"enroll-students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enrollment - Student UnEnrollment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[1] // Arr of student ids",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lcl}}/api/v1/Enrollment/{id_subject}/unenroll-students",
+							"host": [
+								"{{lcl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Enrollment",
+								"{id_subject}",
+								"unenroll-students"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "lcl",
+			"value": "localhost:5276",
+			"type": "default"
+		}
+	]
+}
