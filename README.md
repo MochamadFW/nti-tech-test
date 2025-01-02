@@ -17,6 +17,7 @@ Entities:
   - Enrollment: Add, Delete, View list of subjects taken by a specific student
 - **Error Handling** for each CRUD operation.
 - **Logging** for tracking.
+- **Authentication** -> not completely implemented.
 
 ## Technologies Used
 
